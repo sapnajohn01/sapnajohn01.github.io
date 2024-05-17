@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Sapna John</h1>
+<h2 align="center">Hi 👋, I'm Sapna John</h2>
 <h3 align="center"></h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=sapnajohn01&label=Profile%20views&color=0e75b6&style=flat" alt="sapnajohn01" /> </p>
