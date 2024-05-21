@@ -6,18 +6,18 @@ import seaborn as sns
 from sklearn.feature_extraction.text import CountVectorizer
 
 # Load the movie review data
-movie_reviews = pd.read_csv("movie_reviews.csv")
+movie_rev = pd.read_csv("movie_reviews.csv")
 
-print(movie_reviews.head)
-print(movie_reviews.describe(include="all"))
-print(movie_reviews.columns)
+print(movie_rev.head)
+print(movie_rev.describe(include="all"))
+print(movie_rev.columns)
 
-na=movie_reviews.isnull().sum()
+na=movie_rev.isnull().sum()
 print(na)
 
 # Distribution of sentiments
 plt.figure(figsize=(6, 4))
-sentiment_counts = movie_reviews['Sentiment'].value_counts()
+sentiment_counts = movie_rev['Sentiment'].value_counts()
 sentiment_counts.plot(kind='bar', color=['skyblue', 'salmon'])
 plt.title('Distribution of Sentiments')
 plt.xlabel('Sentiment')
@@ -28,7 +28,7 @@ plt.show()
 
 # Visualize the most frequent words in the reviews
 count_vectorizer = CountVectorizer(max_features=1000, stop_words='english')
-X = count_vectorizer.fit_transform(movie_reviews['Review'])
+X = count_vectorizer.fit_transform(movie_rev['Review'])
 words = count_vectorizer.get_feature_names_out()
 print(words)
 word_frequencies = X.sum(axis=0).A1
@@ -48,7 +48,7 @@ plt.show()
 
 
 # Analyze the distribution of review lengths
-review_lengths = movie_reviews['Review'].apply(lambda x: len(x.split()))
+review_lengths = movie_rev['Review'].apply(lambda x: len(x.split()))
 plt.figure(figsize=(8, 6))
 sns.histplot(review_lengths, bins=30, color='purple', edgecolor='black')
 plt.title('Distribution of Review Lengths')
