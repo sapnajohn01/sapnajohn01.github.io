@@ -24,7 +24,7 @@ model.compile(optimizer='sgd', loss='mean_squared_error')
 model.fit(X, y, epochs=10, verbose=0)
 
 # Predict the next number
-next_number = model.predict([13])
+next_number = model.predict([11])
 print(f"Predicted next number: {next_number}")
 
 #2.Create a Basic Recurrent Neural Network (RNN)  model for text analysis using Python and TensorFlow.(Input text=”Anna, embrace change; Change is  constant.”)
